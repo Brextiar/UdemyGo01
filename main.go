@@ -149,4 +149,29 @@ func main() {
 			fmt.Printf("Got %d notifications\n", eventCnt)
 		}
 	}
+	fmt.Println("-----------------------------")
+	fmt.Println("----BOUCLE FOR-(INFINITE)----")
+	j := 0
+	for {
+		j++
+		if j%2 != 0 {
+			fmt.Println(j, "Skipping...")
+			continue // passe à l'itération suivante
+		}
+		fmt.Println(j, "Looping...")
+		if j >= 10 {
+			fmt.Println("Breaking...")
+			break // sort de la boucle
+		}
+	}
+	fmt.Println("-----------------------------")
+	fmt.Println("------------RANGE------------") // Permet d'itérer sur une structure de données
+	surname := []string{"Dupont", "Durand", "Duchemin", "Duchamp"}
+	for i, s := range surname {
+		fmt.Printf("Surnname=%s (index=%d)\n", s, i)
+	}
+
+	for _, c := range "Hello" {
+		fmt.Printf("%v\n", string(c)) // %v -> valeur en byte du character on cast pour afficher la lettre / %c -> affiche le character
+	}
 }
